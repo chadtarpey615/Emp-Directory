@@ -29,6 +29,11 @@ gem "tailwindcss-rails"
 gem "devise"
 gem 'devise-tailwinded'
 
+
+gem "font-awesome-rails"
+
+gem 'pagy', '~> 5.10' # omit patch digit
+gem 'magic_test', group: :test
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
