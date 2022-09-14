@@ -9,25 +9,30 @@
       <%= link_to 'Add employee', new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
     </div>
 
-    <%== pagy_nav(@pagy)%>
      <%= form_tag(employees_path, method: :get) do %>
      <%= text_field_tag :search, params[:search], placeholder: "Search by name or email", class: "w-full rounded-lg py-3 px-5 bg-gray-100 font-medium mt-5" %>
      <%= submit_tag("Search", class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium") %>
      <% end %>
-
- <table id="employees" class="table-auto w-full mt-5">
-      <thead>
-        <tr class="bg-gray-200">
-          <th>Image</th>
-          <th>Name: </th>
-          <th>Email: </th>
-          <th>Bio: </th>  
-          <th>Show </th>  
-          <th>Edit </th>  
-        </tr>
-      </thead>
-      <%= render @employees %>
-    </table>
+  <% if @employees.present? %>
+    <table id="employees" class="table-auto w-full mt-5">
+        <thead>
+          <tr class="bg-gray-200">
+            <th>Image</th>
+            <th>Name: </th>
+            <th>Email: </th>
+            <th>Bio: </th>  
+            <th>Show </th>  
+            <th>Edit </th>  
+          </tr>
+        </thead>
+        <%= render @employees %>
+      </table>
+   <% else %>
+    <p class="py-2 px-2 bg-50 mb-5 text-gray-500 font-medium rounded-lg inline-block" id="notice">No employees yet</p>
+  <% end %>
+      <div class="mt-2">
+      <%== pagy_nav(@pagy) %>
+      </div>
   </div>
 
 <% else %>
