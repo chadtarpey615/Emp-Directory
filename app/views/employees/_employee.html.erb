@@ -1,9 +1,12 @@
 <tr>
   <td ><%= image_tag avatar_url(employee.email) %></td>
-  <td class="text-sm md:text-md"><%= employee.name %></td>
-  <td class="text-sm md:text-lg"><%= employee.email %></td>
-  <td class="text-sm "><%= employee.bio %></td>
-
+  <td class="text-xs md:text-md"><%= employee.name %></td>
+  <td class="text-xs md:text-lg"><%= employee.email %></td>
+  <% if employee.bio.length < 10 %>
+  <td class="text-xs md:text-sm "><%= employee.bio %></td>
+  <% else %>
+  <td class="text-xs md:text-sm ">See Show Page</td>
+<% end%>
   <% if action_name != "show" %>
     <td><%= link_to "Show this employee", employee, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block text-sm h-12 ring-2 ring-blue-600" %> </td>
     <td><%= link_to fa_icon('gear', text: "edit"), edit_employee_path(employee), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block text-sm h-12 ring-2 ring-blue-600" %> </td>

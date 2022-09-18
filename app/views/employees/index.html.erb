@@ -6,12 +6,12 @@
 
     <div class="flex justify-between">
       <h1 class="font-bold text-4xl">Employees</h1>
-      <%= link_to 'Add employee', new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block w-1/5 font-medium text-center" %>
+      <%= link_to 'Add', new_employee_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block md:w-1/5 font-medium text-center items-center" %>
     </div>
 
-     <%= form_tag(employees_path, method: :get, class: "flex w-full items-center space-x-6") do %>
+     <%= form_tag(employees_path, method: :get, class: "flex w-full items-center space-x-2 md:space-x-6") do %>
      <%= text_field_tag :search, params[:search], placeholder: "Search by name or email", class: "w-4/5 rounded-lg py-3 px-5 bg-gray-100 font-medium mt-5" %>
-     <%= submit_tag("Search", class: "rounded-lg py-3 px-5 h-14 mt-5 bg-blue-600 text-white block w-1/5 font-medium") %>
+     <%= submit_tag("Search", class: "rounded-lg py-3 px-5 h-14 mt-5 bg-blue-600 text-white block  md:w-1/5 font-medium") %>
      <% end %>
   <% if @employees.present? %>
     <table id="employees" class="table-auto w-full mt-5">
