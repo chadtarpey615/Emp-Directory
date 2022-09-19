@@ -1,7 +1,7 @@
 <tr>
-  <td ><%= image_tag avatar_url(employee.email) %></td>
+  <td ><%= image_tag avatar_url(employee.email), class: "hidden sm:table-cell" %></td>
   <td class="text-xs md:text-md"><%= employee.name %></td>
-  <td class="text-xs md:text-lg"><%= employee.email %></td>
+  <td class="text-xs md:text-lg hidden sm:table-cell"><%= employee.email %></td>
   <% if employee.bio.length < 10 %>
   <td class="text-xs md:text-sm "><%= employee.bio %></td>
   <% else %>
