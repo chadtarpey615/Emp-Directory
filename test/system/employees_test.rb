@@ -14,7 +14,7 @@ class EmployeesTest < ApplicationSystemTestCase
   test "should create employee" do
     sign_in users(:two)
     visit employees_url
-    click_on "Add employee"
+    click_on "Add"
     fill_in "Bio", with: @employee.bio
     fill_in "Email", with: @employee.email
     fill_in "Name", with: @employee.name
